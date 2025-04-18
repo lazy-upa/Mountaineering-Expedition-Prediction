@@ -94,3 +94,4 @@ This dataset contains information about the peaks in the Himalayas, including th
 - **Data Source**: [The Himalayan Database](https://www.himalayandatabase.com/downloads.html)
 - **Curator**: [Nicolas Foss, Ed.D., MS](https://www.linkedin.com/in/nicolas-foss)
 - **Image Credit**: Cover of the book *Himalayas by the Numbers* by The Himalayan Database organization.
+
