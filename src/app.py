@@ -2,8 +2,8 @@ import joblib
 import streamlit as st
 import pandas as pd
 
-encoder = joblib.load('C:\\Users\\Legion\\Desktop\\Mountaineering Success Prediction\\src\\Model\\saved_encoder.pkl')
-model = joblib.load('C:\\Users\\Legion\\Desktop\\Mountaineering Success Prediction\\src\Model\\saved_model.pkl')
+pipeline = joblib.load('C:\\Users\\Legion\\Desktop\\Mountaineering Success Prediction\\src\\Model\\saved_model_pipeline.pkl')
+# pipeline = joblib.load('C:\\Users\\Legion\\Desktop\\Mountaineering Success Prediction\\src\Model\\saved_model.pkl')
 
 pkname = st.selectbox("Select Peak's Name", ['Everest', 'Ama Dablam', 'Baruntse', 'Cho Oyu', 'Gyalzen Peak',
        'Himlung Himal', 'Kyungka Ri 2', 'Luza', 'Manaslu', 'Annapurna I',
@@ -35,24 +35,22 @@ o2used = st.selectbox("Was Oxygen Used?", ["Yes", "No"])
 season = st.selectbox("Season", ["Spring", "Summer", "Autumn", "Winter"])
 nohired = st.selectbox("Hired Professionals?", ["Yes", "No"])
 
-season_encoding = {'Spring': 1, 'Summer': 2, 'Autumn': 3, 'Winter': 4}
-season_encoded = season_encoding.get(season, 4)
+# season_encoding = {'Spring': 1, 'Summer': 2, 'Autumn': 3, 'Winter': 4}
+# season_encoded = season_encoding.get(season, 4)
 
 
 input_dict = {
     'PKNAME' : pkname,
     'O2USED' : 1 if o2used == 'Yes' else 0, 
-    'SEASON' : season_encoded,
+    'SEASON_FACTOR' : season,
     'NOHIRED' : 1 if nohired == 'No' else 0
 }
 
 input_df = pd.DataFrame([input_dict])
 
-input_encoded = encoder.transform(input_df)
-
 if st.button("Predict Success"):
-    prediction = model.predict(input_encoded)[0]
-    probability = model.predict_proba(input_encoded)[0][1]
+    prediction = pipeline.predict(input_df)[0]
+    probability = pipeline.predict_proba(input_df)[0][1]
 
     st.write("✅ Success" if prediction == 1 else "❌ Failure")
     st.write(f"Probability of Success: {probability:.2f}")
