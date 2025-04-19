@@ -1,14 +1,14 @@
 # Mountaineering Success Prediction Tool
 
-The project uses **logistic regression** to predict whether or not a can successfully ascend a mountain based on different parameters like the mountain, season, oxygen usage and if a professional is hired or not.
+The project uses **logistic regression** to predict whether or not a can successfully ascend a mountain based on different parameters like the mountain, season, oxygen usage, and whether a professional is hired or not.
 
 ## Features
 
-- **Data Visualization**: The data has been visualized to gain different insights to make decisions.
+- **Data Visualization**: The data has been visualized to gain different decision-making insights.
 
-- **Success Prediction**: Model has been tested with various metrics to ensure it predicts correctly.
+- **Success Prediction**: The model has been tested with various metrics to ensure it correctly predicts.
 
-- **Interactive Input**: A simple button based input selection has been implemented.
+- **Interactive Input**: A simple button-based input selection has been implemented.
 
  
 
@@ -20,7 +20,7 @@ The project uses **logistic regression** to predict whether or not a can success
 Preprocessed raw data to be uniform and ready for modeling.
 
 2. **Dataset Merging**
-Combined multiple related datasets for a more informative, richer analysis.
+Combine multiple related datasets for a more informative, richer analysis.
 
 3. **Exploratory Data Analysis (EDA)**
 Explored various insights in the data for model development.
@@ -29,4 +29,23 @@ Explored various insights in the data for model development.
 Used logistic regression to predict whether or not a mountaineer is gonna succeed.
 
 5. **Prediction Engine**
-Created a simple to use prediction engine.
+
+Created a simple-to-use prediction engine.
+
+## Requirements
+
+-Mentioned in requirements.txt
+
+## How to Use
+
+1. Install required dependencies: 
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. Can view the analysis along with visualization in the `datasets_analysis.ipynb` file.
+
+3. Run the script:
+    ```bash
+    python -m streamlit run .\src\app.py
+    ```
