@@ -34,3 +34,22 @@ Used logistic regression to predict whether or not a mountaineer is gonna succee
 
 5. **Prediction Engine**
 Created a simple-to-use prediction engine.
+
+## Requirements
+
+-Mentioned in requirements.txt
+
+## How to Use
+
+1. Install required dependencies: 
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. Can view the analysis along with visualization in the `datasets_analysis.ipynb` file.
+
+3. Run the script:
+    ```bash
+    python -m streamlit run .\src\app.py
+    ```
+
